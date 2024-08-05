@@ -16,3 +16,8 @@ function arrayToNotation(array) {
   const sqNumber = String.fromCodePoint(yCodePoint);
   return `${sqLetter}${sqNumber}`;
 }
+
+function knightMoves(startSq, destinationSq) {
+  const startArr = notationToArray(startSq);
+  const destinationArr = notationToArray(destinationSq);
+}
