@@ -5,3 +5,9 @@ class Node {
     this.children = [];
   }
 }
+
+export default class MoveTree {
+  constructor(moveArr) {
+    this.root = generateMoveTree(moveArr);
+  }
+}
