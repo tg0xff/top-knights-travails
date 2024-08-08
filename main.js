@@ -26,9 +26,9 @@ function arrayToNotation(array) {
 
 // function processAllValidMoves() {
 //   const validMoves = [];
-//   for (let x = 0; x < 7; x++) {
+//   for (let x = 0; x < 8; x++) {
 //     validMoves[x] = [];
-//     for (let y = 0; y < 7; y++) {
+//     for (let y = 0; y < 8; y++) {
 //       validMoves[x][y] = [];
 //       let moveDifMatrix = [[2, 1], [2, -1], [1, 2], [1, -2], [-1, 2], [-1, -2], [-2, 1], [-2, -1]];
 //       for (const move of moveDifMatrix) {
