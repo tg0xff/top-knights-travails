@@ -8,6 +8,12 @@ class Node {
   }
 }
 
+class Queue {
+  #first = null;
+  #last = null;
+  size = 0;
+}
+
 export default class MoveTree {
   constructor(moveArr) {
     this.root = generateMoveTree(moveArr);
