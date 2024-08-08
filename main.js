@@ -17,6 +17,11 @@ function arrayToNotation(array) {
   return `${sqLetter}${sqNumber}`;
 }
 
+function isValidMove(moveArr) {
+  const [x, y] = moveArr;
+  return x >= 0 && x < 8 && y >= 0 && y < 8;
+}
+
 function knightMoves(startSq, destinationSq) {
   const startArr = notationToArray(startSq);
   const destinationArr = notationToArray(destinationSq);
