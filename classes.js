@@ -17,7 +17,7 @@ class Queue {
       value,
       prev: null,
       next: null,
-    }
+    };
     if (size === 0) {
       this.#first = listItem;
       this.#last = listItem;
@@ -62,5 +62,23 @@ export default class MoveTree {
       }
     }
     return node;
+  }
+  findMovePath(moveArr) {
+    const path = [];
+    const queue = new Queue();
+    queue.enqueue(this.root);
+    while (!queue.isEmpty()) {
+      const node = queue.dequeue();
+      if (node.move === moveArr) {
+        let currentNode = node;
+        while (currentNode !== null) {
+          path.push(currentNode.move);
+          currentNode = currentNode.parent;
+        }
+      }
+      node.children.forEach((child) => queue.enqueue(child));
+    }
+    path.reverse();
+    return path;
   }
 }
