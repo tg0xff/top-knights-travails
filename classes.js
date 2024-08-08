@@ -12,6 +12,22 @@ class Queue {
   #first = null;
   #last = null;
   size = 0;
+  enqueue(value) {
+    const listItem = {
+      value,
+      prev: null,
+      next: null,
+    }
+    if (size === 0) {
+      this.#first = listItem;
+      this.#last = listItem;
+    } else {
+      listItem.prev = this.#last;
+      this.#last.next = listItem;
+      this.#last = listItem;
+    }
+    this.size++;
+  }
 }
 
 export default class MoveTree {
