@@ -42,8 +42,6 @@ function arrayToNotation(array) {
 //   return validMoves;
 // }
 
-const validKnightMoves = validKnightMoves();
-
 function knightMoves(startSq, destinationSq) {
   const startArr = notationToArray(startSq);
   const destinationArr = notationToArray(destinationSq);
