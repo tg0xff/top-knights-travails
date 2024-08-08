@@ -1,6 +1,6 @@
 class Node {
-  constructor(prev, move) {
-    this.prev = prev,
+  constructor(parent, move) {
+    this.parent = parent,
     this.move = move;
     this.children = [];
   }
