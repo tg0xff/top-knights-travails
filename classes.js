@@ -18,7 +18,7 @@ class Queue {
       prev: null,
       next: null,
     };
-    if (size === 0) {
+    if (this.size === 0) {
       this.#first = listItem;
       this.#last = listItem;
     } else {
