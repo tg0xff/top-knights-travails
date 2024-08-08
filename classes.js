@@ -41,6 +41,9 @@ class Queue {
     this.size--;
     return val;
   }
+  isEmpty() {
+    return this.size === 0;
+  }
 }
 
 export default class MoveTree {
