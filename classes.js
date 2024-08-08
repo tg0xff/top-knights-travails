@@ -48,7 +48,7 @@ class Queue {
 
 export default class MoveTree {
   constructor(moveArr) {
-    this.root = generateMoveTree(moveArr);
+    this.root = this.generateMoveTree(moveArr);
   }
   generateMoveTree(moveArr, parent = null, n = 0) {
     if (n > 10) return null;
