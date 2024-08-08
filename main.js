@@ -1,5 +1,4 @@
-import validMoves from "./valid-moves.js";
-import validMoves from "./valid-moves.js";
+import validKnightMoves from "./valid-moves.js";
 
 function notationToArray(chessSquare) {
   if (chessSquare.length !== 2) {
@@ -48,6 +47,6 @@ function knightMoves(startSq, destinationSq) {
   const destinationArr = notationToArray(destinationSq);
 }
 
-const validMoves = validMoves();
+const validKnightMoves = validKnightMoves();
 
 console.log(JSON.stringify(processAllValidMoves()));
