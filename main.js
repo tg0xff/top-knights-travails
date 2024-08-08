@@ -1,5 +1,3 @@
-import validKnightMoves from "./valid-moves.js";
-
 function notationToArray(chessSquare) {
   if (chessSquare.length !== 2) {
     throw new Error("A square is represented by two characters only.");
