@@ -2,7 +2,8 @@ import validKnightMoves from "./valid-moves.js";
 
 class Node {
   constructor(parent, move) {
-    (this.parent = parent), (this.move = move);
+    this.parent = parent;
+    this.move = move;
     this.children = [];
   }
 }
