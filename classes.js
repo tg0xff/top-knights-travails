@@ -28,6 +28,19 @@ class Queue {
     }
     this.size++;
   }
+  dequeue() {
+    if (this.size < 1) return null;
+    const val = this.#last.value;
+    if (this.size === 1) {
+      this.#first = null;
+      this.#last = null;
+    } else {
+      this.#last.prev.next = null;
+      this.#last = this.#last.prev;
+    }
+    this.size--;
+    return val;
+  }
 }
 
 export default class MoveTree {
