@@ -52,7 +52,7 @@ function knightMoves(startSq, destinationSq) {
 
 const start = "a1";
 const end = "h8";
-console.log(`knightMoves(${start}, ${end}):`);
+console.log(`knightMoves("${start}", "${end}"):`);
 const movePath = knightMoves(start, end);
 let pathString = "";
 movePath.forEach((move) => pathString += `, ${arrayToNotation(move)}`);
