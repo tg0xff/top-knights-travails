@@ -51,7 +51,7 @@ function knightMoves(startSq, destinationSq) {
 }
 
 const start = "a1";
-const end = "h8";
+const end = "b7";
 console.log(`knightMoves("${start}", "${end}"):`);
 const movePath = knightMoves(start, end);
 let pathString = "";
