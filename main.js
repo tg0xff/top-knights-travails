@@ -1,3 +1,5 @@
+import MoveTree from "./classes.js";
+
 function notationToArray(chessSquare) {
   if (chessSquare.length !== 2) {
     throw new Error("A square is represented by two characters only.");
@@ -45,4 +47,7 @@ const validKnightMoves = validKnightMoves();
 function knightMoves(startSq, destinationSq) {
   const startArr = notationToArray(startSq);
   const destinationArr = notationToArray(destinationSq);
+  const moveTree = new MoveTree(startArr);
+  const movePath = moveTree.findMovePath(destinationArr);
+  return movePath;
 }
