@@ -15,7 +15,8 @@ export default class MoveTree {
     if (n > 10) return null;
     const node = new Node(parent, moveArr);
     const [x, y] = moveArr;
-    for (const move of validKnightMoves[x][y]) {
+    const validMoves = validKnightMoves();
+    for (const move of validMoves[x][y]) {
       const child = this.generateMoveTree(move, node, n + 1);
       if (child) {
         node.children.push(child);
