@@ -42,9 +42,7 @@ function isValidMove(moveArr) {
 //   return validMoves;
 // }
 
-function knightMoves(startSq, destinationSq) {
-  const startArr = notationToArray(startSq);
-  const destinationArr = notationToArray(destinationSq);
+function knightMoves(startArr, destinationArr) {
   if (!isValidMove(startArr) || !isValidMove(destinationArr)) {
     throw new Error(
       "The coordinates must be within the range of a chessboard.",
@@ -63,11 +61,13 @@ const testMoves = [
 ];
 for (const testMove of testMoves) {
   const [start, end] = testMove;
+  const startArr = notationToArray(start);
+  const endArr = notationToArray(end);
   console.log({
-    start: `${start} = [${notationToArray(start)}]`,
-    end: `${end} = [${notationToArray(end)}]`,
+    start: `${start} = [${startArr}]`,
+    end: `${end} = [${endArr}]`,
   });
-  const movePath = knightMoves(start, end);
+  const movePath = knightMoves(startArr, endArr);
 
   let pathString = "";
   movePath.forEach((move) => (pathString += `, ${arrayToNotation(move)}`));
