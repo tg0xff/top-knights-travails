@@ -63,7 +63,7 @@ export default class MoveTree {
     return node;
   }
   findMovePath(moveArr) {
-    const path = [];
+    const movePath = [];
     const [targetX, targetY] = moveArr;
     const queue = new Queue();
     queue.enqueue(this.root);
@@ -73,14 +73,14 @@ export default class MoveTree {
       if (nodeX === targetX && nodeY === targetY) {
         let currentNode = node;
         while (currentNode !== null) {
-          path.push(currentNode.move);
+          movePath.push(currentNode.move);
           currentNode = currentNode.parent;
         }
         break;
       }
       node.children.forEach((child) => queue.enqueue(child));
     }
-    path.reverse();
-    return path;
+    movePath.reverse();
+    return movePath;
   }
 }
