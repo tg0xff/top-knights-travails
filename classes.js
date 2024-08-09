@@ -15,13 +15,11 @@ class Queue {
     const listItem = {
       value,
       prev: null,
-      next: null,
     };
     if (this.size === 0) {
       this.#last = listItem;
     } else {
       listItem.prev = this.#last;
-      this.#last.next = listItem;
       this.#last = listItem;
     }
     this.size++;
@@ -32,7 +30,6 @@ class Queue {
     if (this.size === 1) {
       this.#last = null;
     } else {
-      this.#last.prev.next = null;
       this.#last = this.#last.prev;
     }
     this.size--;
