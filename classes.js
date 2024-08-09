@@ -45,8 +45,8 @@ export default class MoveTree {
   generateMoveTree(moveArr, parent = null, n = 0) {
     if (n > 8) return null;
     const node = new Node(parent, moveArr);
-    const [rootX, rootY] = moveArr;
-    let validMoves = validKnightMoves()[rootX][rootY];
+    let validMoves = validKnightMoves()[moveArr[0]][moveArr[1]];
+
     if (parent) {
       const [parentX, parentY] = parent.move;
       validMoves = validMoves.filter((move) => {
@@ -54,12 +54,14 @@ export default class MoveTree {
         return parentX !== currentX && parentY !== currentY;
       });
     }
+
     for (const move of validMoves) {
       const child = this.generateMoveTree(move, node, n + 1);
       if (child) {
         node.children.push(child);
       }
     }
+
     return node;
   }
   findMovePath(moveArr) {
@@ -67,6 +69,7 @@ export default class MoveTree {
     const [targetX, targetY] = moveArr;
     const queue = new Queue();
     queue.enqueue(this.root);
+
     while (!queue.isEmpty()) {
       const node = queue.dequeue();
       const [nodeX, nodeY] = node.move;
@@ -80,6 +83,7 @@ export default class MoveTree {
       }
       node.children.forEach((child) => queue.enqueue(child));
     }
+
     movePath.reverse();
     return movePath;
   }
