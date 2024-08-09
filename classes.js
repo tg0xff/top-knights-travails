@@ -9,6 +9,7 @@ class Node {
 }
 
 class Queue {
+  #first = null;
   #last = null;
   size = 0;
   enqueue(value) {
@@ -17,10 +18,11 @@ class Queue {
       prev: null,
     };
     if (this.size === 0) {
+      this.#first = listItem;
       this.#last = listItem;
     } else {
-      listItem.prev = this.#last;
-      this.#last = listItem;
+      this.#first.prev = listItem;
+      this.#first = listItem;
     }
     this.size++;
   }
