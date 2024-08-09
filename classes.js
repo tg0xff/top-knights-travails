@@ -45,13 +45,13 @@ export default class MoveTree {
   generateMoveTree(moveArr, parent = null, n = 0) {
     if (n > 8) return null;
     const node = new Node(parent, moveArr);
-    const [x, y] = moveArr;
-    let validMoves = validKnightMoves()[x][y];
+    const [rootX, rootY] = moveArr;
+    let validMoves = validKnightMoves()[rootX][rootY];
     if (parent) {
       const [parentX, parentY] = parent.move;
       validMoves = validMoves.filter((move) => {
-        const [curX, curY] = move;
-        return parentX !== curX && parentY !== curY;
+        const [currentX, currentY] = move;
+        return parentX !== currentX && parentY !== currentY;
       });
     }
     for (const move of validMoves) {
