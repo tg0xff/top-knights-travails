@@ -9,7 +9,6 @@ class Node {
 }
 
 class Queue {
-  #first = null;
   #last = null;
   size = 0;
   enqueue(value) {
@@ -19,7 +18,6 @@ class Queue {
       next: null,
     };
     if (this.size === 0) {
-      this.#first = listItem;
       this.#last = listItem;
     } else {
       listItem.prev = this.#last;
@@ -32,7 +30,6 @@ class Queue {
     if (this.size < 1) return null;
     const val = this.#last.value;
     if (this.size === 1) {
-      this.#first = null;
       this.#last = null;
     } else {
       this.#last.prev.next = null;
