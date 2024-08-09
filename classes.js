@@ -27,11 +27,7 @@ class Queue {
   dequeue() {
     if (this.size < 1) return null;
     const val = this.#last.value;
-    if (this.size === 1) {
-      this.#last = null;
-    } else {
-      this.#last = this.#last.prev;
-    }
+    this.#last = this.#last.prev;
     this.size--;
     return val;
   }
