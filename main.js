@@ -55,11 +55,27 @@ function knightMoves(startSq, destinationSq) {
   return movePath;
 }
 
-const start = "a1";
-const end = "d4";
-console.log(`knightMoves("${start}", "${end}"):`);
-const movePath = knightMoves(start, end);
-let pathString = "";
-movePath.forEach((move) => (pathString += `, ${arrayToNotation(move)}`));
-pathString = pathString.slice(2);
-console.log(pathString);
+const testMoves = [
+  ["a1", "b3"],
+  ["a1", "d4"],
+  ["d4", "a1"],
+  ["a1", "h8"],
+];
+for (const testMove of testMoves) {
+  const [start, end] = testMove;
+  console.log({
+    start: `${start} = [${notationToArray(start)}]`,
+    end: `${end} = [${notationToArray(end)}]`,
+  });
+  const movePath = knightMoves(start, end);
+
+  let pathString = "";
+  movePath.forEach((move) => (pathString += `, ${arrayToNotation(move)}`));
+  pathString = pathString.slice(2);
+  console.log(pathString);
+
+  pathString = "";
+  movePath.forEach((move) => (pathString += `, [${move}]`));
+  pathString = pathString.slice(2);
+  console.log(pathString);
+}
