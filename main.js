@@ -46,7 +46,9 @@ function knightMoves(startSq, destinationSq) {
   const startArr = notationToArray(startSq);
   const destinationArr = notationToArray(destinationSq);
   if (!isValidMove(startArr) || !isValidMove(destinationArr)) {
-    throw new Error("The coordinates must be within the range of a chessboard.")
+    throw new Error(
+      "The coordinates must be within the range of a chessboard.",
+    );
   }
   const moveTree = new MoveTree(startArr);
   const movePath = moveTree.findMovePath(destinationArr);
