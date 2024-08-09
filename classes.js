@@ -65,16 +65,19 @@ export default class MoveTree {
   }
   findMovePath(moveArr) {
     const path = [];
+    const [targetX, targetY] = moveArr;
     const queue = new Queue();
     queue.enqueue(this.root);
     while (!queue.isEmpty()) {
       const node = queue.dequeue();
-      if (node.move === moveArr) {
+      const [nodeX, nodeY] = node.move;
+      if (nodeX === targetX && nodeY === targetY) {
         let currentNode = node;
         while (currentNode !== null) {
           path.push(currentNode.move);
           currentNode = currentNode.parent;
         }
+        break;
       }
       node.children.forEach((child) => queue.enqueue(child));
     }
