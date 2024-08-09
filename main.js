@@ -78,4 +78,5 @@ for (const testMove of testMoves) {
   movePath.forEach((move) => (pathString += `, [${move}]`));
   pathString = pathString.slice(2);
   console.log(pathString);
+  console.log("");
 }
