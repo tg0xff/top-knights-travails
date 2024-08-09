@@ -51,10 +51,10 @@ function knightMoves(startSq, destinationSq) {
 }
 
 const start = "a1";
-const end = "b7";
+const end = "h8";
 console.log(`knightMoves("${start}", "${end}"):`);
 const movePath = knightMoves(start, end);
 let pathString = "";
-movePath.forEach((move) => pathString += `, ${arrayToNotation(move)}`);
+movePath.forEach((move) => (pathString += `, ${arrayToNotation(move)}`));
 pathString = pathString.slice(2);
 console.log(pathString);
