@@ -19,10 +19,10 @@ function arrayToNotation(array) {
   return `${sqLetter}${sqNumber}`;
 }
 
-// function isValidMove(moveArr) {
-//   const [x, y] = moveArr;
-//   return x >= 0 && x < 8 && y >= 0 && y < 8;
-// }
+function isValidMove(moveArr) {
+  const [x, y] = moveArr;
+  return x >= 0 && x < 8 && y >= 0 && y < 8;
+}
 
 // function processAllValidMoves() {
 //   const validMoves = [];
@@ -45,6 +45,9 @@ function arrayToNotation(array) {
 function knightMoves(startSq, destinationSq) {
   const startArr = notationToArray(startSq);
   const destinationArr = notationToArray(destinationSq);
+  if (!isValidMove(startArr) || !isValidMove(destinationArr)) {
+    throw new Error("The coordinates must be within the range of a chessboard.")
+  }
   const moveTree = new MoveTree(startArr);
   const movePath = moveTree.findMovePath(destinationArr);
   return movePath;
